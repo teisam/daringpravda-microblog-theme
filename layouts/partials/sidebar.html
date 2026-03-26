@@ -1,0 +1,16 @@
+<aside class="sidebar">
+  <p class="byline">By {{ .Site.Author.name | default "Teisam Pravdason" }}</p>
+
+  <nav class="sidenav" aria-label="Primary">
+    <a href="/archive/">Archive</a>
+    <a href="/about/">About</a>
+    <a href="/feeds/">Feeds</a>
+  </nav>
+
+  {{ with .Site.Params.description }}
+    <section class="about">
+      <p class="kicker">A link blog in the old style.</p>
+      <p>{{ . }}</p>
+    </section>
+  {{ end }}
+</aside>

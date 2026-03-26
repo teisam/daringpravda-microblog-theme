@@ -1,0 +1,12 @@
+name = "Daring Pravda"
+license = "MIT"
+licenselink = "https://opensource.org/licenses/MIT"
+description = "A Micro.blog theme inspired by the editorial structure of Daring Fireball."
+homepage = "https://example.com/daringpravda"
+tags = ["blog", "micro.blog", "editorial", "minimal"]
+features = ["blog", "responsive"]
+min_version = "0.1.0"
+
+[author]
+  name = "Teisam"
+  homepage = "https://example.com"

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div class="page">
+    {{ partial "header.html" . }}
+
+    <div class="layout">
+      {{ partial "sidebar.html" . }}
+
+      <main class="content">
+        <article class="post feature-post">
+          <h1>{{ .Title | default "Untitled Post" }}</h1>
+          {{ if .Date }}
+            <p class="dateline">{{ .Date.Format "Monday, 2 January 2006" }}</p>
+          {{ end }}
+          <div class="post-body">
+            {{ .Content }}
+          </div>
+        </article>
+      </main>
+    </div>
+
+    {{ partial "footer.html" . }}
+  </div>
+</body>
+</html>

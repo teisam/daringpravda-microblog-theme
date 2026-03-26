@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div class="page">
+    {{ partial "header.html" . }}
+
+    <div class="layout">
+      {{ partial "sidebar.html" . }}
+
+      <main class="content">
+        {{ $posts := where .Site.RegularPages "Type" "post" }}
+        {{ range $posts.ByDate.Reverse }}
+          <article class="post short-post">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title | default "Untitled Post" }}</a></h2>
+            {{ if .Date }}
+              <p class="dateline">{{ .Date.Format "Monday, 2 January 2006" }}</p>
+            {{ end }}
+            <div class="post-body">
+              {{ .Content }}
+            </div>
+          </article>
+        {{ end }}
+      </main>
+    </div>
+
+    {{ partial "footer.html" . }}
+  </div>
+</body>
+</html>
