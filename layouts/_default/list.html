@@ -12,9 +12,19 @@
 
       <main class="content">
         {{ $posts := where .Site.RegularPages "Type" "post" }}
+        {{ $lastDay := "" }}
         {{ range $posts.ByDate.Reverse }}
+          {{ $currentDay := .Date.Format "2006-01-02" }}
+          {{ if ne $currentDay $lastDay }}
+            <h3 class="day-header">{{ .Date.Format "Monday, 2 January 2006" }}</h3>
+            {{ $lastDay = $currentDay }}
+          {{ end }}
+
           <article class="post short-post">
-            <h2><a href="{{ .RelPermalink }}">{{ .Title | default "Untitled Post" }}</a></h2>
+            {{ if .Title }}
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ end }}
+
             {{ if .Date }}
               <p class="dateline">{{ .Date.Format "Monday, 2 January 2006" }}</p>
             {{ end }}

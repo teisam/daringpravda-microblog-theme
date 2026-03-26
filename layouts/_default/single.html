@@ -12,7 +12,9 @@
 
       <main class="content">
         <article class="post feature-post">
-          <h1>{{ .Title | default "Untitled Post" }}</h1>
+          {{ if .Title }}
+            <h1>{{ .Title }}</h1>
+          {{ end }}
           {{ if .Date }}
             <p class="dateline">{{ .Date.Format "Monday, 2 January 2006" }}</p>
           {{ end }}

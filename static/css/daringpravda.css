@@ -177,6 +177,15 @@ a:hover {
   letter-spacing: 0.05em;
 }
 
+.day-header {
+  margin: 4px 0 20px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 .post-body blockquote,
 .post > blockquote {
   margin-left: 0;
